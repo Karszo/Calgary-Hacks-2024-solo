@@ -1,16 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4xypbqcsfyor"]
+[gd_scene load_steps=3 format=3 uid="uid://c4xypbqcsfyor"]
 
-[ext_resource type="Texture2D" uid="uid://cfxta7qm2y1wn" path="res://2D assets/icon.svg" id="1_ouykg"]
+[ext_resource type="Texture2D" uid="uid://bl087udrlrf60" path="res://2D assets/Player/player idle 001.png" id="1_k4470"]
+[ext_resource type="Script" path="res://Sceans/Player/cha.gd" id="1_u1kkq"]
 
 [node name="Player" type="Node2D"]
-texture_filter = 2
+texture_filter = 1
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="cha" type="CharacterBody2D" parent="."]
 collision_mask = 14
-mass = 75.0
+script = ExtResource("1_u1kkq")
+speed = null
+jump_velocity = null
+double_jump_velocity = null
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
-polygon = PackedVector2Array(-53, -64, 51, -64, 56, -61, 62, -55, 64, -49, 64, 49, 62, 55, 58, 60, 52, 64, -51, 64, -60, 60, -63, 54, -64, 50, -64, -51, -62, -57, -58, -61)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="cha"]
+polygon = PackedVector2Array(-11, -28, 0, -32, 11, -29, 8, -21, 11, -14, 22, -16, 27, -8, 29, 14, 11, 13, 11, 28, 9, 30, -13, 30, -15, 19, -24, 19, -24, -8, -17, -14, -7, -14, -8, -20, -7, -25)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ouykg")
+texture = ExtResource("1_k4470")
